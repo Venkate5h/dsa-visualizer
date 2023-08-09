@@ -1,24 +1,48 @@
-import logo from './logo.svg';
+import { Layout } from 'antd';
+import AppSider from './components/app-sider';
+import AppHeader from './components/app-header';
+import AppContent from './components/app-content';
+import AppFooter from './components/app-footer';
 import './App.css';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useEffect, useMemo } from 'react';
+import { routes } from './routes/routes';
 
-function App() {
+const { Content, Footer, Header, Sider } = Layout;
+
+const App = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const activeRoute = useMemo(() =>
+    routes.find(route => location.pathname?.includes(route.path)),
+    [location.pathname]);
+
+  useEffect(() => {
+    if (!activeRoute) {
+      navigate(routes?.[0]?.path);
+    }
+  }, [activeRoute, navigate]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout className='App-layout' hasSider>
+      <Sider className='App-sider'>
+        <AppSider activeRoute={activeRoute} />
+      </Sider>
+      <Layout>
+        <Header className='App-header'>
+          <AppHeader activeRoute={activeRoute} />
+        </Header>
+        <Layout className='App-content-layout'>
+          <Content className='App-content' >
+            <AppContent activeRoute={activeRoute} />
+          </Content>
+        </Layout>
+        <Footer className='App-footer'>
+          <AppFooter />
+        </Footer>
+      </Layout>
+    </Layout>
   );
 }
 
