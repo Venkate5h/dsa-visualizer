@@ -1,1 +1,1 @@
-# sorting-visualizer
+# dsa-visualizer
