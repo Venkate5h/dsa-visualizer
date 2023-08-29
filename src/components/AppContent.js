@@ -8,7 +8,11 @@ import {
   StepBackwardOutlined,
   StepForwardOutlined,
 } from "@ant-design/icons";
-import { bubbleSortWithSteps, randomizeArray } from "../utils/utils";
+import {
+  bubbleSortWithSteps,
+  mergeSortWithSteps,
+  randomizeArray,
+} from "../utils/utils";
 import ReusableBarChart from "./ReusableBarChart";
 
 const AppContent = (props) => {
@@ -21,7 +25,7 @@ const AppContent = (props) => {
   const handleRandomize = () => {
     setShowAnimation(false);
     setCounter(0);
-    setIterations([randomizeArray(20)]);
+    setIterations([randomizeArray(30)]);
   };
 
   // Initialze the array and first iteration
@@ -45,7 +49,7 @@ const AppContent = (props) => {
               : prevCounter + 1
           );
         }
-      }, 500);
+      }, 1000);
     }
     return () => {
       clearInterval(animation);
@@ -59,6 +63,9 @@ const AppContent = (props) => {
         switch (activeRoute?.path) {
           case "bubbleSort":
             animatedIterations = bubbleSortWithSteps(iterations[0]);
+            break;
+          case "mergeSort":
+            animatedIterations = mergeSortWithSteps(iterations[0]);
             break;
           default:
             animatedIterations = [...iterations];
@@ -79,7 +86,7 @@ const AppContent = (props) => {
         border: "1px solid lightgrey",
         boxShadow: "2px 2px 4px lightgrey",
         borderRadius: "2vh",
-        backgroundColor: "rgba(240, 240, 240, 0.35",
+        backgroundColor: "rgba(255, 255, 255, 0.3",
       }}
     >
       <Col span={24} style={{ minHeight: "40vh" }}>
@@ -87,14 +94,18 @@ const AppContent = (props) => {
       </Col>
       <Col span={24} align="center">
         <Space style={{ paddingBottom: "2vh" }}>
-          <Button onClick={handleRandomize}>Randomize Array</Button>
+          <Button className="App-button" onClick={handleRandomize}>
+            Randomize Array
+          </Button>
           <Button
+            className="App-button"
             disabled={showAnimation || counter === 0}
             onClick={() => setCounter(0)}
           >
             <FastBackwardOutlined />
           </Button>
           <Button
+            className="App-button"
             disabled={showAnimation || counter === 0}
             onClick={() => setCounter((counter) => counter - 1)}
           >
@@ -119,12 +130,14 @@ const AppContent = (props) => {
             )}
           </Button>
           <Button
+            className="App-button"
             disabled={showAnimation || counter === iterations?.length - 1}
             onClick={() => setCounter((counter) => counter + 1)}
           >
             <StepForwardOutlined />
           </Button>
           <Button
+            className="App-button"
             disabled={showAnimation || counter === iterations?.length - 1}
             onClick={() => setCounter(iterations?.length - 1)}
           >

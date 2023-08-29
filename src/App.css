@@ -5,7 +5,7 @@
 .App-sider {
   min-width: 15vw !important;
   max-width: 15vw !important;
-  background: darkslateblue !important;
+  background: linear-gradient(to bottom, slateblue, darkslateblue) !important;
 }
 
 .App-sider-header {
@@ -28,7 +28,12 @@
 .App-header {
   padding: 0;
   text-align: center;
-  background-color: transparent;
+  background: linear-gradient(
+    to right,
+    rgba(106, 90, 205, 0.1),
+    rgba(106, 90, 205, 0.2),
+    rgba(106, 90, 205, 0.1)
+  );
   border-bottom: 1px solid rgb(175, 175, 175);
 }
 
@@ -44,10 +49,29 @@
 .App-content {
   padding: 4vh 2vw;
   background-color: white;
+  background: rgba(106, 90, 205, 0.2);
 }
 
 .App-footer {
   padding: 0;
   text-align: center;
   border-top: 1px solid rgb(175, 175, 175);
+  background: linear-gradient(
+    to right,
+    rgba(106, 90, 205, 0.1),
+    rgba(106, 90, 205, 0.2),
+    rgba(106, 90, 205, 0.1)
+  );
+}
+
+.App-content .App-button {
+  background: transparent;
+  border-color: #000;
+  color: #000;
+}
+
+.App-content .App-button:disabled {
+  background: transparent;
+  border-color: rgba(106, 90, 205, 0.3);
+  color: rgba(106, 90, 205, 0.3);
 }

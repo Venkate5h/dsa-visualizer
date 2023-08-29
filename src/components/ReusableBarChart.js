@@ -6,7 +6,7 @@ const ReusableBarChart = ({ data = [] }) => {
     () => ({
       xAxis: {
         type: "category",
-        data: [...Array(20).keys()],
+        data: [...Array(30).keys()],
         name: "Index Position",
         nameLocation: "center",
         nameGap: 40,
