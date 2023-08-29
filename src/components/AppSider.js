@@ -16,7 +16,7 @@ const AppSider = (props) => {
         <Space>
           <Avatar icon={<SwapOutlined />} />
           <Typography.Text className="App-title">
-            Sorting Visualizer
+            DSA Visualizer
           </Typography.Text>
         </Space>
       </Header>
@@ -26,7 +26,7 @@ const AppSider = (props) => {
         mode="vertical"
         items={menuRoutes}
         selectedKeys={selectedKeys}
-        onSelect={({ key }) => navigate(key)}
+        onSelect={({ key }) => navigate("dsa-visualizer/" + key)}
       />
     </>
   );
