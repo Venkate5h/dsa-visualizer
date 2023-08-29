@@ -1,8 +1,8 @@
 import { Layout } from "antd";
-import AppSider from "./components/app-sider";
-import AppHeader from "./components/app-header";
-import AppContent from "./components/app-content";
-import AppFooter from "./components/app-footer";
+import AppSider from "./components/AppSider";
+import AppHeader from "./components/AppHeader";
+import AppContent from "./components/AppContent";
+import AppFooter from "./components/AppFooter";
 import "./App.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useMemo } from "react";
