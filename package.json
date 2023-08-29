@@ -16,7 +16,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://venkate5h.github.io/sorting-visualizer/",
+  "homepage": "https://venkate5h.github.io/dsa-visualizer/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
