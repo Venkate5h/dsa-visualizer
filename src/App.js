@@ -21,7 +21,7 @@ const App = () => {
 
   useEffect(() => {
     if (!activeRoute) {
-      navigate("dsa-visualizer/" + routes?.[0]?.path);
+      navigate(routes?.[0]?.path);
     }
   }, [activeRoute, navigate]);
 

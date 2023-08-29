@@ -26,7 +26,7 @@ const AppSider = (props) => {
         mode="vertical"
         items={menuRoutes}
         selectedKeys={selectedKeys}
-        onSelect={({ key }) => navigate("dsa-visualizer/" + key)}
+        onSelect={({ key }) => navigate(key)}
       />
     </>
   );
