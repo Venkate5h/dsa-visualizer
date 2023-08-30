@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/dsa-visualizer/static/css/main.8e73a227.css",
-    "main.js": "/dsa-visualizer/static/js/main.712ca224.js",
+    "main.css": "/dsa-visualizer/static/css/main.f749e1f1.css",
+    "main.js": "/dsa-visualizer/static/js/main.91dfe8e1.js",
     "static/js/787.f5ecc189.chunk.js": "/dsa-visualizer/static/js/787.f5ecc189.chunk.js",
     "static/media/logo.svg": "/dsa-visualizer/static/media/logo.fb2c5b94682e7fed7c0daa45c9e15d95.svg",
     "index.html": "/dsa-visualizer/index.html",
-    "main.8e73a227.css.map": "/dsa-visualizer/static/css/main.8e73a227.css.map",
-    "main.712ca224.js.map": "/dsa-visualizer/static/js/main.712ca224.js.map",
+    "main.f749e1f1.css.map": "/dsa-visualizer/static/css/main.f749e1f1.css.map",
+    "main.91dfe8e1.js.map": "/dsa-visualizer/static/js/main.91dfe8e1.js.map",
     "787.f5ecc189.chunk.js.map": "/dsa-visualizer/static/js/787.f5ecc189.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8e73a227.css",
-    "static/js/main.712ca224.js"
+    "static/css/main.f749e1f1.css",
+    "static/js/main.91dfe8e1.js"
   ]
 }
