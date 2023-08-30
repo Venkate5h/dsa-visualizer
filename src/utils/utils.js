@@ -201,3 +201,45 @@ export const insertionSortWithSteps = (initial) => {
   iterations.push([...last]);
   return iterations;
 };
+
+//Selection sort and return all the iterations
+export const selectionSortWithSteps = (initial) => {
+  const iterations = [[...initial]];
+  const n = initial.length;
+
+  for (let i = 0; i < n - 1; i++) {
+    let minIndex = i;
+    for (let j = i + 1; j < n; j++) {
+      let currentArr = [...initial].map((item, index) =>
+        setColorGradient(item, index < i ? "green" : "gray")
+      );
+      currentArr[i] = setColorGradient(currentArr[i], "green");
+      currentArr[minIndex] = setColorGradient(currentArr[minIndex], "orange");
+      currentArr[j] = setColorGradient(currentArr[j], "yellow");
+      iterations.push([...currentArr]);
+      if (initial[j]?.value < initial[minIndex]?.value) {
+        minIndex = j;
+        currentArr = [...initial].map((item, index) =>
+          setColorGradient(item, index < i ? "green" : "gray")
+        );
+        currentArr[i] = setColorGradient(currentArr[i], "green");
+        currentArr[minIndex] = setColorGradient(currentArr[minIndex], "orange");
+        iterations.push([...currentArr]);
+      }
+    }
+
+    if (minIndex !== i) {
+      // Swap the elements
+      [initial[i], initial[minIndex]] = [initial[minIndex], initial[i]];
+      let currentArr = [...initial].map((item, index) =>
+        setColorGradient(item, index < i ? "green" : "gray")
+      );
+      currentArr[i] = setColorGradient(currentArr[i], "orange");
+      currentArr[minIndex] = setColorGradient(currentArr[minIndex], "green");
+      iterations.push([...currentArr]);
+    }
+  }
+  const last = [...initial].map((item) => setColorGradient(item, "green"));
+  iterations.push([...last]);
+  return iterations;
+};

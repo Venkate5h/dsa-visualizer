@@ -21,14 +21,16 @@ const AppSider = (props) => {
           </Typography.Text>
         </Row>
       </Header>
-      <Menu
-        className="App-sider-menu"
-        theme="dark"
-        mode="vertical"
-        items={menuRoutes}
-        selectedKeys={selectedKeys}
-        onSelect={({ key }) => navigate(key)}
-      />
+      <div className="App-sider-menu-layout">
+        <Menu
+          className="App-sider-menu"
+          theme="dark"
+          mode="vertical"
+          items={menuRoutes}
+          selectedKeys={selectedKeys}
+          onSelect={({ key }) => navigate(key)}
+        />
+      </div>
     </>
   );
 };

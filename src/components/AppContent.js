@@ -13,6 +13,7 @@ import {
   insertionSortWithSteps,
   mergeSortWithSteps,
   randomizeArray,
+  selectionSortWithSteps,
 } from "../utils/utils";
 import ReusableBarChart from "./ReusableBarChart";
 
@@ -70,6 +71,9 @@ const AppContent = (props) => {
             break;
           case "insertionSort":
             animatedIterations = insertionSortWithSteps(iterations[0]);
+            break;
+          case "selectionSort":
+            animatedIterations = selectionSortWithSteps(iterations[0]);
             break;
           default:
             animatedIterations = [...iterations];

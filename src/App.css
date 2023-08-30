@@ -32,6 +32,12 @@
   letter-spacing: 1px;
 }
 
+.App-sider-menu-layout {
+  max-height: 80vh;
+  overflow-y: auto;
+  background: initial;
+}
+
 .App-sider-menu {
   padding: 1vh 1vw;
   background: transparent !important;
