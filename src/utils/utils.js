@@ -89,10 +89,13 @@ export const mergeSortWithSteps = (initial) => {
           color:
             index < end
               ? new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                  { offset: 1, color: "gray" },
-                  { offset: 0, color: "lightgray" },
+                  { offset: 1, color: "darkgray" },
+                  { offset: 0, color: "gray" },
                 ])
-              : "lightgrey",
+              : new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  { offset: 1, color: "lightblue" },
+                  { offset: 0, color: "slateblue" },
+                ]),
         },
       }));
       currentArr[middle] = {

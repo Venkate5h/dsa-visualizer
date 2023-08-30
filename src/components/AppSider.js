@@ -1,8 +1,9 @@
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { SwapOutlined } from "@ant-design/icons";
-import { Avatar, Layout, Menu, Space, Typography } from "antd";
+import { Layout, Menu, Row, Typography } from "antd";
 import { menuRoutes } from "../routes/routes";
+import logo from "../assets/logo.svg";
+
 const { Header } = Layout;
 
 const AppSider = (props) => {
@@ -13,12 +14,12 @@ const AppSider = (props) => {
   return (
     <>
       <Header className="App-sider-header">
-        <Space>
-          <Avatar icon={<SwapOutlined />} />
+        <Row align="middle" justify="center" style={{ height: "100%" }}>
+          <img src={logo} alt="logo" width="35px" />
           <Typography.Text className="App-title">
             DSA Visualizer
           </Typography.Text>
-        </Space>
+        </Row>
       </Header>
       <Menu
         className="App-sider-menu"
