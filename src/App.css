@@ -2,27 +2,19 @@
   height: 100vh;
 }
 
+.App-layout .ant-layout {
+  background: white;
+}
+
 .App-sider {
   min-width: 15vw !important;
   max-width: 15vw !important;
-  background: linear-gradient(
-    to right bottom,
-    darkslateblue,
-    slateblue,
-    darkslateblue,
-    slateblue,
-    darkslateblue,
-    slateblue,
-    darkslateblue,
-    slateblue,
-    darkslateblue,
-    slateblue,
-    darkslateblue,
-    slateblue,
-    darkslateblue,
-    slateblue,
-    darkslateblue
-  ) !important;
+  height: 100vh !important;
+  background: repeating-linear-gradient(45deg, slateblue 2%, darkslateblue 4%),
+    repeating-linear-gradient(90deg, slateblue 2%, darkslateblue 4%),
+    repeating-linear-gradient(-90deg, slateblue 2%, darkslateblue 4%),
+    repeating-linear-gradient(-45deg, darkslateblue 2%, slateblue 4%) !important;
+  background-blend-mode: darken !important;
 }
 
 .App-sider-header {
@@ -48,12 +40,7 @@
 .App-header {
   padding: 0;
   text-align: center;
-  background: linear-gradient(
-    to right,
-    rgba(106, 90, 205, 0.1),
-    rgba(106, 90, 205, 0.2),
-    rgba(106, 90, 205, 0.1)
-  );
+  background: white;
   border-bottom: 1px solid rgb(175, 175, 175);
 }
 
@@ -70,30 +57,28 @@
 
 .App-content {
   padding: 4vh 2vw;
-  background-color: white;
-  background: rgba(106, 90, 205, 0.2);
 }
 
 .App-footer {
   padding: 0;
   text-align: center;
   border-top: 1px solid rgb(175, 175, 175);
-  background: linear-gradient(
-    to right,
-    rgba(106, 90, 205, 0.1),
-    rgba(106, 90, 205, 0.2),
-    rgba(106, 90, 205, 0.1)
-  );
+  background: transparent;
 }
 
-.App-content .App-button {
-  background: transparent;
-  border-color: #000;
-  color: #000;
+.chart-container {
+  border: 1px solid lightgrey;
+  box-shadow: 2px 2px 4px lightgrey;
+  border-radius: 2vh;
+  background: repeating-linear-gradient(45deg, whitesmoke 2%, white 4%),
+    repeating-linear-gradient(-45deg, whitesmoke 2%, white 4%);
+  background-blend-mode: lighten;
 }
 
-.App-content .App-button:disabled {
-  background: transparent;
-  border-color: rgba(106, 90, 205, 0.3);
-  color: rgba(106, 90, 205, 0.3);
+.chart {
+  min-height: 40vh;
+}
+
+.chart-actions {
+  padding-bottom: 2vh;
 }

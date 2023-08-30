@@ -10,6 +10,7 @@ import {
 } from "@ant-design/icons";
 import {
   bubbleSortWithSteps,
+  insertionSortWithSteps,
   mergeSortWithSteps,
   randomizeArray,
 } from "../utils/utils";
@@ -49,7 +50,7 @@ const AppContent = (props) => {
               : prevCounter + 1
           );
         }
-      }, 1000);
+      }, 500);
     }
     return () => {
       clearInterval(animation);
@@ -67,6 +68,9 @@ const AppContent = (props) => {
           case "mergeSort":
             animatedIterations = mergeSortWithSteps(iterations[0]);
             break;
+          case "insertionSort":
+            animatedIterations = insertionSortWithSteps(iterations[0]);
+            break;
           default:
             animatedIterations = [...iterations];
             break;
@@ -81,31 +85,20 @@ const AppContent = (props) => {
   };
 
   return (
-    <Row
-      style={{
-        border: "1px solid lightgrey",
-        boxShadow: "2px 2px 4px lightgrey",
-        borderRadius: "2vh",
-        backgroundColor: "rgba(255, 255, 255, 0.3",
-      }}
-    >
-      <Col span={24} style={{ minHeight: "40vh" }}>
+    <Row className="chart-container">
+      <Col span={24} className="chart">
         <ReusableBarChart data={iterations?.[counter] || []} />
       </Col>
       <Col span={24} align="center">
-        <Space style={{ paddingBottom: "2vh" }}>
-          <Button className="App-button" onClick={handleRandomize}>
-            Randomize Array
-          </Button>
+        <Space className="chart-actions">
+          <Button onClick={handleRandomize}>Randomize Array</Button>
           <Button
-            className="App-button"
             disabled={showAnimation || counter === 0}
             onClick={() => setCounter(0)}
           >
             <FastBackwardOutlined />
           </Button>
           <Button
-            className="App-button"
             disabled={showAnimation || counter === 0}
             onClick={() => setCounter((counter) => counter - 1)}
           >
@@ -122,22 +115,17 @@ const AppContent = (props) => {
               </>
             ) : (
               <>
-                <PlayCircleOutlined />{" "}
-                {counter === 0 || counter === iterations?.length - 1
-                  ? `Visualize`
-                  : `Continue`}
+                <PlayCircleOutlined /> Visualize
               </>
             )}
           </Button>
           <Button
-            className="App-button"
             disabled={showAnimation || counter === iterations?.length - 1}
             onClick={() => setCounter((counter) => counter + 1)}
           >
             <StepForwardOutlined />
           </Button>
           <Button
-            className="App-button"
             disabled={showAnimation || counter === iterations?.length - 1}
             onClick={() => setCounter(iterations?.length - 1)}
           >
