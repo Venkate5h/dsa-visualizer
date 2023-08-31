@@ -1,0 +1,90 @@
+.App-layout {
+  height: 100vh;
+}
+
+.App-layout .ant-layout {
+  background: white;
+}
+
+.App-sider {
+  min-width: 15vw !important;
+  max-width: 15vw !important;
+  height: 100vh !important;
+  background: repeating-linear-gradient(45deg, slateblue 2%, darkslateblue 4%),
+    repeating-linear-gradient(90deg, slateblue 2%, darkslateblue 4%),
+    repeating-linear-gradient(-90deg, slateblue 2%, darkslateblue 4%),
+    repeating-linear-gradient(-45deg, darkslateblue 2%, slateblue 4%) !important;
+  background-blend-mode: darken !important;
+}
+
+.App-sider-header {
+  padding: 0;
+  text-align: center;
+  background: transparent !important;
+  border-bottom: 1px solid rgb(175, 175, 175);
+}
+
+.App-title {
+  color: white;
+  font-weight: bold;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.App-sider-menu-layout {
+  max-height: 80vh;
+  overflow-y: auto;
+  background: initial;
+}
+
+.App-sider-menu {
+  padding: 1vh 1vw;
+  background: transparent !important;
+}
+
+.App-header {
+  padding: 0;
+  text-align: center;
+  background: white;
+  border-bottom: 1px solid rgb(175, 175, 175);
+}
+
+.App-header-label {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Alegreya Sans SC", sans-serif;
+  letter-spacing: 1px;
+}
+
+.App-content-layout {
+  overflow-y: auto;
+}
+
+.App-content {
+  padding: 4vh 2vw;
+}
+
+.App-footer {
+  padding: 0;
+  text-align: center;
+  border-top: 1px solid rgb(175, 175, 175);
+  background: transparent;
+}
+
+.chart-container {
+  border: 1px solid lightgrey;
+  box-shadow: 2px 2px 4px lightgrey;
+  border-radius: 2vh;
+  background: repeating-linear-gradient(45deg, whitesmoke 2%, white 4%),
+    repeating-linear-gradient(-45deg, whitesmoke 2%, white 4%);
+  background-blend-mode: lighten;
+}
+
+.chart {
+  min-height: 40vh;
+}
+
+.chart-actions {
+  padding-bottom: 2vh;
+}
